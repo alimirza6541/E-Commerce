@@ -1,0 +1,11 @@
+<ul   *ngFor="let receipt of bil" >
+  
+    <li> 
+      <b> ID : </b> {{receipt.id}} 
+      <ul  *ngFor="let cart of receipt.cart " >
+        <li> <b> ID : </b> {{cart.id}} <b> Name : </b> {{cart.name}} <b> Price : </b> {{cart.price}}
+                           <b> Status : </b> {{cart.status}} <b> Description : </b> {{cart.description}}
+        </li>
+      </ul>
+  </li>
+</ul>

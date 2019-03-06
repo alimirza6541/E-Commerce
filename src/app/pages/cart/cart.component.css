@@ -1,0 +1,20 @@
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+h2 {
+    text-align: center;
+}
+.btn-group>.btn:first-child {
+    margin-left: 500px;
+}

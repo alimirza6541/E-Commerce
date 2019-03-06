@@ -1,0 +1,60 @@
+<div style="text-align:center">
+    <h1 class="jumbotron"> Seller View </h1>
+  </div> 
+  <div class="row">
+    <div class="col-md-7">
+    
+      <h2>Products List</h2>
+      <ul class="list-group hover" *ngFor="let item of prd">
+      
+        <li class="list-group-item ">
+            <img src="assets/ss.jpg" style="width:180px; height:180px ">
+   <i class="fas fa-red-river"> </i> <b>Name:</b> {{item.name}} <b>Price:</b> {{item.price}} <b>Status:</b> {{item.status}}
+            <button class="btn btn-primary" (click) = "onClick(item)"> Edit </button> 
+            <button class="btn btn-danger" (click) = "deleteProduct(id)"> Delete </button>
+        </li>
+      </ul>
+  
+    </div>
+    <div class="col-md-4">
+  
+    
+      <form #productForm="ngForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" name="name"  [(ngModel)]="name" placeholder="Product Name" required>
+            
+        </div>
+        <div class="form-group">
+          <label>status</label>
+          <input class="form-control" name="status"  [(ngModel)]="status" placeholder="Status">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input class="form-control" name="Description"  [(ngModel)]="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+          <label>Price</label>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="fa fa-dollar"></i>
+            </div>
+            <input type="number" class="form-control" name="price" [(ngModel)]="price" placeholder="Price">
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="btn-group">
+          <button type="submit" class="btn btn-success" [disabled]="!productForm.valid" (click)="createProduct()"> <i class="fa fa-floppy-o"></i>
+            Submit </button>
+          <button type="button" class="btn btn-danger" (click)="deleteProduct()"> Delete </button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()"> Reset </button>
+          <button type="button" class="btn btn-primary" (click)="updateProduct()"> Update </button>
+          <button type="button" class="btn btn-info" routerLink="/mybill"  (click)="createbill()"> Total Sale </button>
+          </div>
+  
+        </div>
+        
+  
+      </form>
+    </div>
+  </div>

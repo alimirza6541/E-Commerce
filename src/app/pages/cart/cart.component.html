@@ -1,0 +1,30 @@
+
+<div class="container">
+<h2> Welcome to your Cart </h2>
+<div class="row">
+
+<div class="list-group hover" *ngFor = "let value of newValue"> 
+
+      <div class="card">
+          <div class="col-md-6">
+                <div class="card-body" style="width:20rem">
+            <img src="assets/ss.jpg" style="width:180px; height:180px ">
+          <i class="fas fa-red-river"> </i> <b>Name:</b> {{value.name}} <b>Price:</b> {{value.price}} <b>Status:</b> {{value.status}}
+  <button class="btn btn-danger" (click)="removeItem(value)"> Remove Item </button>
+</div> 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="btn-group">
+<button class="btn btn-primary" (click)="createbill()"   routerLink="/curentbill" > Checkout </button>
+<button class="btn btn-primary"    routerLink="/customer" > Back </button>
+<button class="btn btn-primary" (click)="handlePayment()"  routerLink="/make-payment" > Pay through Card </button>
+<button class="btn btn-success" (click)="createbill" id = "id"   routerLink="/mybill" > All bills </button>
+</div>
+    
+  
+

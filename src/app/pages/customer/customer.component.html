@@ -1,0 +1,28 @@
+<div style="text-align:center">
+  <h1 class="jumbotron"> <img src="assets/shop.jpeg" style="height:400px; width: 1000px"> </h1>
+</div>
+
+<div class="container">
+  <h2> <b> Products List </b></h2>
+  <div class="row">
+  <div  *ngFor="let item of prd">
+    <div class="card" > 
+
+<div class="col-md-6">
+ 
+      <div class="card-body" style="width:20rem">
+          <img src="assets/ss.jpg" style="width:180px; height:180px ">
+          
+          <b>Name:</b> {{item.name}} <b>Price:</b>
+            {{item.price}} <b>Status:</b> {{item.status}}
+            <button class="btn btn-success"  (click)="onclick(item)">Add to cart</button>
+           
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+</div>
+
+</div>  <button class="btn btn-danger" style="margin-top: 5px" routerLink="/cart"> Show Cart </button>
