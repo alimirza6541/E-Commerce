@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-curentbill',
   templateUrl: './curentbill.component.html',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CurentbillComponent implements OnInit {
 
   cb ;
+  total: number = 0;
 
   constructor() { }
 
@@ -20,4 +22,17 @@ export class CurentbillComponent implements OnInit {
    this.cb = JSON.parse(str);
    console.log(this.cb);
   }
+  totalPrice() {
+
+
+    let x = JSON.parse(localStorage.getItem('cart'));
+
+    let len = x.length;
+
+
+    for (var i = 0; i < len; i++) {
+      let y = parseInt(x[i].price);
+      this.total = (y + this.total);
+    }
+}
 }
